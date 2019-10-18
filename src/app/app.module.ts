@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -25,11 +26,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
         runtimeChecks: {
           strictStateImmutability: true,
           strictActionImmutability: true
-        }
+        },
       }),
-      StoreDevtoolsModule.instrument({
-        maxAge: 10
-      })
+      !environment.production ? StoreDevtoolsModule.instrument({  maxAge: 10   }) : []
     ],
   providers: [
     StatusBar,
