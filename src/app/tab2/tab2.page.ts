@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { increment } from '../counter.actions';
 
 @Component({
   selector: 'app-tab2',
@@ -6,7 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  count$ = this.store.select('count');
 
-  constructor() {}
+  constructor(private store: Store<{ count: number }>) {  }
 
+  increment() {
+    this.store.dispatch(increment());
+  }
 }

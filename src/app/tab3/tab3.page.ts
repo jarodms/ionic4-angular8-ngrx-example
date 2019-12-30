@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  count$ = this.store.select('count');
+
+  constructor(private store: Store<{ count: number }>) {}
 
 }
