@@ -1,5 +1,5 @@
 # ionic4-angular8-ngrx-example
-Ionic 4 with Angular 8, using ngrx 
+Ionic 4 with Angular 8, using ngrx - old style with classes
 
 # Redux Dev Tools
 This example is also setup to use @ngrx/store-devtools when _not_ running in Production. 
