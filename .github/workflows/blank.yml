@@ -44,11 +44,11 @@ jobs:
 
     - name: npm install and npm run build
       run: |
-        npm ci
-        npm run build:ci
+        npm i
+        npm run build
         
-    - name: Run NG Build
-      run: ng build
+    # - name: Run NG Build
+    #  run: ng build
     
     #- name: Run Tests
     #  run: ng test
